@@ -1,0 +1,110 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+header {
+  background-color: rgb(196, 81, 119);
+  color: #FFF;
+  padding: 50px 20px;
+}
+
+
+body {
+  font-family: Helvetica, Verdana, sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.content {
+  border-right: solid 1px rgb(196, 81, 119);
+  border-bottom: solid 1px rgb(196, 81, 119);
+  border-left: solid 1px rgb(196, 81, 119);
+  padding: 20px;
+}
+
+h2 {
+  color: rgb(196, 81, 119);
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 1.5em;
+}
+
+h3 {
+  font-family: monospace;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+p {
+  margin: 1em 0;
+  line-height: 1.4em;
+}
+
+code, pre {
+  background-color: rgb(255, 251, 207);
+  border: solid 1px rgb(255, 241, 95);
+  color: rgb(172, 113, 63);
+  font-family: monospace;
+  font-size: 1.1em;
+}
+
+code {
+  padding: 3px 5px;
+}
+
+pre {
+  padding: 10px;
+}

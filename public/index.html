@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Todo API</title>
+    <link href="style.css" rel="Stylesheet" />
+  </head>
+  <body>
+
+    <header>
+      <h1 class="container">The Todo API</h1>
+    </header>
+
+    <div class="container">
+
+      <div class="content">
+
+        <p>This API is for making simple Todo lists. To use it, you will call various API paths.</p>
+
+        <h2>Bucket Id</h2>
+
+        <p>Todo list items are stored by buckets, each having an Id. You can generate a bucket id by navigating to <code>/api/bucketId</code> on this site. You'll see something like this. This is your bucket id.</p>
+
+        <pre>
+{
+  "bucketId" : "8eba54b1-7680-4eab-a6eb-d1abb78e9974"
+}</pre>
+
+        <p>All requests to the API will expect the bucket id as a query string parameter named <code>bucketId</code>.</p>
+
+        <h2>Creating a Todo Item</h2>
+
+        <p>With your bucket id, you can go ahead and create Todo items. To do that, do an HTTP POST to <code>/api/item</code> with the following data.</p>
+
+        <h3>Request</h3>
+<pre>
+POST /api/item?bucketId={bucket-id}
+
+text=Go+sell+your+pants</pre>
+
+        <p>This API will return you the item with a little bit more info. You don't have to use it but it's there if you need it.</p>
+
+        <h3>Response</h3>
+<pre>
+{
+  "id" : "9a26a94a-6825-48a9-9f22-0b4420978656",
+  "text" : "Go sell your pants",
+  "isComplete" : false
+}</pre>
+
+        <h2>Getting a List of Items</h2>
+
+        <p>Once you have created at least one item, you can now go get it/them. To do that, make an HTTP GET request to <code>/api/items</code>.</p>
+
+        <h3>Request</h3>
+
+<pre>
+GET /api/items?bucketId={bucked-id}
+</pre>
+
+        <h3>Response</h3>
+<pre>
+{
+  "items" : [
+    {
+      "id" : "19e236a0-4903-4c8d-9ba3-5cefeb1186ba",
+      "text" : "Go sell your pants",
+      "isComplete" : false
+    },
+    {
+      "id" : "36d67be3-b851-405d-9699-134d5cf9f57a",
+      "text" : "Buy shorts",
+      "isComplete" : true
+    },
+    {
+      "id" : "981441a1-05be-4aa0-8190-2fcf4f203f93",
+      "text" : "Put on shorts",
+      "isComplete" : false
+    }]
+}</pre>
+
+        <h2>Deleting Items</h2>
+
+        <p>To delete an item, do a DELETE request to <code>/api/item/{item-id}</code>, where <code>item-id</code> is the id assigned to the item by the API.
+
+        <h3>Request</h3>
+
+<pre>
+DELETE /api/item/{item-id}?bucketId={bucket-id}
+</pre>
+
+        <h3>Response</h3>
+
+<pre>
+204 No Content
+</pre>
+
+        <h2>Marking Items Complete</h2>
+
+        <h3>Request</h3>
+
+<pre>
+POST /api/item/{item-id}/togglestatus?bucketId={bucket-id}
+</pre>
+
+        <h3>Response</h3>
+
+<pre>
+204 No Content
+</pre>
+
+      </div>
+
+    </div>
+  </body>
+</html>
